@@ -1,0 +1,10 @@
+-- CreateTable
+CREATE TABLE "items" (
+    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" DATETIME NOT NULL,
+    "thumbnail" TEXT NOT NULL,
+    "name" TEXT NOT NULL,
+    "desc" TEXT NOT NULL,
+    "status" BOOLEAN NOT NULL
+);
