@@ -5,6 +5,10 @@ const itemsApiController = require("../controllers/itemsApi.controller");
 const router = Router();
 
 router.get("/list", itemsController.listPage);
+router.get("/about", itemsController.aboutPage);
+router.get("/list/add", itemsController.addPage);
+router.post("/list", itemsController.addItem);
+router.post("/list/:id/delete", itemsController.deleteItem);
 
 // API router
 router.get("/api/items", itemsApiController.getItems);

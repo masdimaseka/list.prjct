@@ -8,51 +8,70 @@
   <body>
     <%- include("../components/navbar") %>
 
-    <section id="home-content" class="container d-flex flex-wrap gap-4 mb-5">
-      <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">Id</th>
-            <th scope="col">Created At</th>
-            <th scope="col">Name</th>
-            <th scope="col">Description</th>
-            <th scope="col">Status</th>
-            <th scope="col">Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% items.forEach((item)=>{%>
-          <tr class="align-items-center">
-            <th scope="row"><%= item.id %></th>
-            <td>
-              <span
-                class="d-inline-block text-truncate"
-                style="max-width: 150px"
-              >
-                <%= item.createdAt %>
-              </span>
-            </td>
-            <td><%= item.name %></td>
-            <td>
-              <span
-                class="d-inline-block text-truncate"
-                style="max-width: 150px"
-                ><%= item.name %>
-              </span>
-            </td>
-            <td><%= item.status == true ? "Done" : "Progress" %></td>
-            <td class="d-flex gap-2">
-              <a href="#" class="btn btn-sm btn-light">
-                <i class="bi bi-pencil-square"></i>
-              </a>
-              <a href="#" class="btn btn-sm btn-light">
-                <i class="bi bi-trash"></i>
-              </a>
-            </td>
-          </tr>
-          <% }) %>
-        </tbody>
-      </table>
+    <section id="home-content" class="container">
+      <div class="d-flex justify-content-between mt-5">
+        <h3>List items</h3>
+        <a
+          href="/list/add"
+          class="btn btn-outline-primary fs-3"
+          style="
+            width: 3rem;
+            height: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          "
+          >+</a
+        >
+      </div>
+      <div class="d-flex flex-wrap gap-4 mt-3">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">Created At</th>
+              <th scope="col">Name</th>
+              <th scope="col">Description</th>
+              <th scope="col">Status</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% items.forEach((item)=>{%>
+            <tr class="align-items-center">
+              <th scope="row"><%= item.id %></th>
+              <td>
+                <span
+                  class="d-inline-block text-truncate"
+                  style="max-width: 150px"
+                >
+                  <%= item.createdAt %>
+                </span>
+              </td>
+              <td><%= item.name %></td>
+              <td>
+                <span
+                  class="d-inline-block text-truncate"
+                  style="max-width: 150px"
+                  ><%= item.name %>
+                </span>
+              </td>
+              <td><%= item.status == true ? "Done" : "Progress" %></td>
+              <td class="d-flex gap-2">
+                <a href="#" class="btn btn-sm btn-light">
+                  <i class="bi bi-pencil-square"></i>
+                </a>
+                <form method="post" action="/list/<%= item.id %>/delete">
+                  <button type="submit" class="btn btn-sm btn-light">
+                    <i class="bi bi-trash"></i>
+                  </button>
+                </form>
+              </td>
+            </tr>
+            <% }) %>
+          </tbody>
+        </table>
+      </div>
     </section>
     <%- include("../setups/script") %>
   </body>

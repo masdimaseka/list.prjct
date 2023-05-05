@@ -9,10 +9,6 @@ router.get("/", itemsController.indexPage, (req, res) => {
   res.render("pages/index");
 });
 
-router.get("/about", (req, res) => {
-  res.render("pages/about");
-});
-
 router.use(itemsRouter);
 
 module.exports = router;
