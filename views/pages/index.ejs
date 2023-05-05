@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("../setups/head") %>
+    <title>List Prjct</title>
+  </head>
+
+  <body>
+    <%- include("../components/navbar") %>
+
+    <section id="home-content" class="container d-flex flex-wrap gap-4 mb-5">
+      <% items.forEach((item)=>{ %>
+      <div class="card" style="width: 18rem">
+        <img src="<%= item.thumbnail %>" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title"><%= item.name %></h5>
+          <p class="card-text"><%= item.desc %></p>
+        </div>
+      </div>
+      <% }) %>
+    </section>
+    <%- include("../setups/script") %>
+  </body>
+</html>

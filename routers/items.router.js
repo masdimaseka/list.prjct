@@ -1,8 +1,10 @@
 const { Router } = require("express");
-// const ItemsController = require("../controllers/items.controller");
+const itemsController = require("../controllers/items.controller");
 const itemsApiController = require("../controllers/itemsApi.controller");
 
 const router = Router();
+
+router.get("/list", itemsController.listPage);
 
 // API router
 router.get("/api/items", itemsApiController.getItems);
