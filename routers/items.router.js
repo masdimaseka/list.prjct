@@ -9,6 +9,7 @@ router.get("/about", itemsController.aboutPage);
 router.get("/list/add", itemsController.addPage);
 router.post("/list", itemsController.addItem);
 router.post("/list/:id/delete", itemsController.deleteItem);
+router.get("/list/:id/edit", itemsController.editPage);
 
 // API router
 router.get("/api/items", itemsApiController.getItems);

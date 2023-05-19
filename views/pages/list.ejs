@@ -58,7 +58,10 @@
               </td>
               <td><%= item.status == true ? "Done" : "Progress" %></td>
               <td class="d-flex gap-2">
-                <a href="#" class="btn btn-sm btn-light">
+                <a
+                  href="/list/<%= item.id %>/edit"
+                  class="btn btn-sm btn-light"
+                >
                   <i class="bi bi-pencil-square"></i>
                 </a>
                 <form method="post" action="/list/<%= item.id %>/delete">

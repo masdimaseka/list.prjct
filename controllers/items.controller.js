@@ -18,6 +18,16 @@ class itemsController {
   static async addPage(req, res) {
     res.render("pages/add");
   }
+
+  static async editPage(req, res) {
+    const resault = await prisma.items.findUnique({
+      where: {
+        id: Number(req.params.id),
+      },
+    });
+    res.render("pages/edit", { items: resault });
+  }
+
   static async addItem(req, res) {
     await prisma.items.create({
       data: {
