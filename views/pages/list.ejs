@@ -59,6 +59,12 @@
               <td><%= item.status == true ? "Done" : "Progress" %></td>
               <td class="d-flex gap-2">
                 <a
+                  href="/list/<%= item.id %>/detail"
+                  class="btn btn-sm btn-light"
+                >
+                  <i class="bi bi-eye"></i>
+                </a>
+                <a
                   href="/list/<%= item.id %>/edit"
                   class="btn btn-sm btn-light"
                 >

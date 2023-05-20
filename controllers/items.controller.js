@@ -19,6 +19,15 @@ class itemsController {
     res.render("pages/add");
   }
 
+  static async detailPage(req, res) {
+    const resault = await prisma.items.findUnique({
+      where: {
+        id: Number(req.params.id),
+      },
+    });
+    res.render("pages/detail", { items: resault });
+  }
+
   static async editPage(req, res) {
     const resault = await prisma.items.findUnique({
       where: {

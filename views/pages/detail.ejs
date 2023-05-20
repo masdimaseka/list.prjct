@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include("../setups/head") %>
+</head>
+
+<body>
+  <%- include("../components/navbar") %>
+
+  <section id="home-content" class="container">
+    <div class="my-5">
+      <div class="d-flex justify-content-between align-content-center">
+          <h3>Detail items</h3>
+          <a href="/list" class="btn btn-outline-danger" style="width: 3rem;height: 3rem;display: flex;align-items: center;justify-content: center;">X</a>
+        </div>
+      <div class="d-flex">
+        <div>
+          <img class="border mb-3" width="350"
+            src="<%= items.thumbnail %>"
+            alt="shoe" />
+        </div>
+        <div class="ms-5">
+          <h5><%= items.name %></h5>
+          <p class="h6 my-4">Status: <%= items.status %></p>
+          <p><%= items.desc %></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <%- include("../setups/script") %>
+
+</html>

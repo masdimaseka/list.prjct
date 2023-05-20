@@ -8,6 +8,7 @@ router.get("/list", itemsController.listPage);
 router.get("/about", itemsController.aboutPage);
 router.get("/list/add", itemsController.addPage);
 router.get("/list/:id/edit", itemsController.editPage);
+router.get("/list/:id/detail", itemsController.detailPage);
 router.post("/list/:id/edit", itemsController.updateItem);
 router.post("/list", itemsController.addItem);
 router.post("/list/:id/delete", itemsController.deleteItem);
