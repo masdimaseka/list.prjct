@@ -49,6 +49,21 @@ class itemsController {
     });
     res.redirect("/list");
   }
+
+  static async updateItem(req, res) {
+    await prisma.items.update({
+      where: {
+        id: Number(req.params.id),
+      },
+      data: {
+        thumbnail: req.body.thumbnail,
+        name: req.body.name,
+        desc: req.body.desc,
+        status: req.body.status === "true" ? true : false,
+      },
+    });
+    res.redirect("/list");
+  }
 }
 
 module.exports = itemsController;

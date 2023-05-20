@@ -7,9 +7,10 @@ const router = Router();
 router.get("/list", itemsController.listPage);
 router.get("/about", itemsController.aboutPage);
 router.get("/list/add", itemsController.addPage);
+router.get("/list/:id/edit", itemsController.editPage);
+router.post("/list/:id/edit", itemsController.updateItem);
 router.post("/list", itemsController.addItem);
 router.post("/list/:id/delete", itemsController.deleteItem);
-router.get("/list/:id/edit", itemsController.editPage);
 
 // API router
 router.get("/api/items", itemsApiController.getItems);
